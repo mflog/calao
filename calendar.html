@@ -26,38 +26,69 @@
 
 events = [
   {
-    "title": "All Day Event",
+    "title": "1",
     "start": "2022-10-01",
     "id":1
   },
   {
-    "title": "Long Event",
+    "title": "3",
     "start": "2022-10-07",
-    "end": "2022-10-10",
     "id":2
   },
   {
-    "title": "Repeating Event 1",
-    "start": "2022-10-09T16:00:00",
+    "title": "10",
+    "start": "2022-10-09",
     "id":3
   },
   {
-    "title": "Repeating Event 2",
-    "start": "2022-10-16T16:00:00-05:00",
+    "title": "2",
+    "start": "2022-10-16",
     "id":4,
   },
   {
-    "title": "All Day Event",
+    "title": "4",
     "start": "2022-10-21",
-    "end": "2022-10-21",
     "id":5
   },
   {
-    "title": "All Day Event",
-    "start": "2022-10-21T10:00:00",
+    "title": "7",
+    "start": "2022-10-22",
     "id":6
   }
-]
+];
+
+eventsUP = [
+  {
+    "title": "1",
+    "start": "2022-10-01",
+    "id":1
+  },
+  {
+    "title": "3",
+    "start": "2022-10-07",
+    "id":2
+  },
+  {
+    "title": "10",
+    "start": "2022-10-09",
+    "id":3
+  },
+  {
+    "title": "2",
+    "start": "2022-10-16",
+    "id":4,
+  },
+  {
+    "title": "4",
+    "start": "2022-10-21",
+    "id":5
+  },
+  {
+    "title": "7",
+    "start": "2022-10-22",
+    "id":6
+  }
+];
 
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
@@ -99,8 +130,12 @@ events = [
         dateClick: function(info) {
             console.log(info.view.type+' : '+info.dateStr)
             if (info.view.type=="dayGridMonth"){
-                //calendar.changeView('listMonth', info.dateStr);
-                alert(info.resource);
+                calendar.changeView('listMonth', info.dateStr);
+                console.log(calendar.getEvents())
+                calendar.setOption('events', eventsUP);
+                console.log(calendar.getEvents())
+
+                //alert(info.resource);
             }
             //info.dayEl.style.backgroundColor = 'green';
         },
