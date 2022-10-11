@@ -74,4 +74,41 @@ nav {
     margin-top: 1em !important;
 }
 
-/*----- XXXX -------------------------------*/
+/*----- FORM -------------------------------*/
+
+.form-container {
+    height: calc(var(--vh, 1vh) * 100 - 120px);
+    margin: 50px 5px -30px 5px;
+}
+
+form {
+    background-color: lightgray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;        
+}
+
+form > p {
+    text-align: center;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
+    20%, 40%, 60%, 80% {transform: translateX(10px);} 
+ }
+
+ #form {
+    animation-duration: 1s; 
+    animation-fill-mode: both;
+ }
+
+ .shake { 
+    -webkit-animation-name: shake; 
+    animation-name: shake; 
+}
+
+/*----- XXX -------------------------------*/
