@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+
+    <style>
+
+    </style>
+<link href='fullcalendar/lib/main.css' rel='stylesheet' />
+<script src='fullcalendar/lib/main.js'></script>
+<script src='fullcalendar/lib/locales/fr.js'></script>
+
+<script>
+
+events = [
+  {
+    "title": "All Day Event",
+    "start": "2022-10-01",
+    "id":1
+  },
+  {
+    "title": "Long Event",
+    "start": "2022-10-07",
+    "end": "2022-10-10",
+    "id":2
+  },
+  {
+    "title": "Repeating Event 1",
+    "start": "2022-10-09T16:00:00",
+    "id":3
+  },
+  {
+    "title": "Repeating Event 2",
+    "start": "2022-10-16T16:00:00-05:00",
+    "id":4,
+  },
+  {
+    "title": "All Day Event",
+    "start": "2022-10-21",
+    "end": "2022-10-21",
+    "id":5
+  },
+  {
+    "title": "All Day Event",
+    "start": "2022-10-21T10:00:00",
+    "id":6
+  }
+]
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'fr',
+        themeSystem: 'bootstrap5',
+        headerToolbar: {
+            left: "title",
+            center: "",
+            right: "filter",
+        },
+        footerToolbar: {
+            left: "prev,today,next",
+            center: "",
+            right: "dayGridMonth,listMonth",
+        },
+        buttonIcons:{
+            prev: 'chevron-left',
+            next: 'chevron-right',
+            listMonth: 'list-ul',
+            dayGridMonth: 'calendar',
+            filter:'sliders',
+        },
+        customButtons: {
+            filter: {
+                text: 'F',
+                click: function() {
+                    alert('clicked filter button!');
+                },
+            }
+        },
+        displayEventTime : false,
+        events: events,
+        eventClick: function(info) {
+            console.log(info.view.type+' : '+info.dateStr+" > "+info.event.title+" : "+info.event.id)
+            info.el.style.borderColor = 'red';
+        },
+        dateClick: function(info) {
+            console.log(info.view.type+' : '+info.dateStr)
+            if (info.view.type=="dayGridMonth"){
+                //calendar.changeView('listMonth', info.dateStr);
+                alert(info.resource);
+            }
+            //info.dayEl.style.backgroundColor = 'green';
+        },
+        eventContent: function (args, createElement){
+            if (args.view.type=="listMonth"){
+                const text = args.event._def.title + '<button onclick="alert(\'hello\')" style="float: right"><i class="bi bi-search"></i> </button>';
+            return {
+                html: text}
+            }
+        },
+        
+    });
+    calendar.render();
+  });
+
+</script>
+
+
+
+</head>
+<body>
+    <header>
+        <div class="header-item header-logo">
+            <img src="img/logo_amgen.png" alt="Logo AMGEN">
+        </div>
+        <div class="header-item header-title">
+            <h1>CALENDRIER</h1>
+        </div>
+    </header>
+
+    <main>
+      
+      <div class="calendar" id='calendar'></div>
+  
+    </main>
+
+    <nav class="menu-nav">
+        
+            <div class="menu-li"><a href="#"><i class="bi bi-calendar"></i><br><span class="icon-title">Calendrier</span></a></div>
+            <div class="menu-li"><a href="#"><i class="bi bi-search"></i><br><span class="icon-title">Focus</span></a></div>
+            <!-- <div class="menu-li"><a href="#"><i class="bi bi-sliders"></i><br>Filtres</a></div> -->
+            <div class="menu-li"><a href="#"><i class="bi bi-bell"></i><br><span class="icon-title">Notifications</span></a></div>
+            <div class="menu-li"><a href="#"><i class="bi bi-gear-wide-connected"></i><br><span class="icon-title">Réglages</span></a></div>
+        
+    </nav>
+
+    
+
+
+</body>
+</html>
