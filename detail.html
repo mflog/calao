@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    
+
+</head>
+<body>
+    <header>
+        <div class="header-item header-logo">
+            <a href="https://mflog.github.io/calao/login.html">
+                <img src="img/logo_amgen.png" alt="Logo AMGEN">
+            </a>
+        </div>
+        <div class="header-item header-title">
+            <h1>DETAIL</h1>
+        </div>
+    </header>
+
+    <main>
+<!-- -------------------------------------------------------------------------------------- -->
+      <div class="detail" id='info'>
+        <h2><i class="bi bi-folder2-open detail-blue-icon" ></i> A0-123  <i class="bi bi-arrow-repeat detail-green-icon"> 1</i></h2>
+       
+        <!--<i class="bi bi-arrow-repeat detail-green-icon"> 1</i> -->
+        <!-- <i class="bi bi-arrow-repeat" style="color: red;"></i>  -->	
+        
+        <div class="table-general">
+            <div>
+                <p>		
+                        <span>
+                            <i class="bi bi-person-fill detail-blue-icon"></i>
+                            Patrice
+                        </span>
+                        <span style="margin-left: 10px;">
+                            <i class="bi bi-person-fill detail-blue-icon"></i>
+                            Christelle  				  
+                        </span>
+                </p>
+            </div>
+        </div>
+      </div>
+      
+<!-- -------------------------------------------------------------------------------------- -->
+      <div class="detail" id='planning'>
+            <h3>Planning</h3>
+
+        <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+                google.charts.load('current', {'packages':['gantt'], 'language': 'fr'});
+                google.charts.setOnLoadCallback(drawChart);
+                
+                
+
+
+
+    function daysToMilliseconds(days) {
+      return days * 24 * 60 * 60 * 1000;
+    }
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Task ID');
+      data.addColumn('string', 'Task Name');
+      data.addColumn('date', 'Start Date');
+      data.addColumn('date', 'End Date');
+      data.addColumn('number', 'Duration');
+      data.addColumn('number', 'Percent Complete');
+      data.addColumn('string', 'Dependencies');
+
+      data.addRows([
+        ['1', "AO",
+         new Date(2022, 1, 18), new Date(2022, 1, 28), daysToMilliseconds(1),  100, null],
+        ['2', 'Marché ',
+         new Date(2022, 1, 28), new Date(2022, 10, 1), daysToMilliseconds(1), 90, '1'],
+        ['3', 'Reconduc 1',
+         new Date(2022, 10, 1), new Date(2023, 1, 2), daysToMilliseconds(1), 0, '2'],
+        
+      ]);
+
+      var options = {
+        height: 200,
+        
+        gantt: {
+          criticalPathEnabled: false, // Critical path arrows will be the same as other arrows.
+          arrow: {
+            angle: 100,
+            width: 1,
+            color: 'dodgerblue',
+            radius: 0
+          },
+          labelStyle: {
+             fontName: 'Roboto Mono',
+            fontSize: 12,
+          color: 'dodgerblue'
+          },
+          barCornerRadius: 2,
+          backgroundColor: {
+            fill: 'transparent',
+          },
+          innerGridHorizLine: {
+            stroke: '#ddd',
+            strokeWidth: 0,
+          },
+          innerGridTrack: {
+            fill: 'transparent'
+          },
+          innerGridDarkTrack: {
+            fill: 'transparent'
+          },
+          percentEnabled:	true, 
+      // percentStyle: {
+      //   fill:	'black',
+      // },
+          shadowEnabled: false
+        }
+      };
+
+      var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    } 
+        </script> -->
+        <div id="chart_div" class="chart"></div>
+        <script src="Apexcharts/moment.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script>
+            
+            var options = {
+          series: [
+          {
+            data: [
+              {
+                x: "Appel d'offres",
+                y: [
+                  new Date('2022-09-01').getTime(),
+                  new Date('2022-11-04').getTime()
+                ],
+                fillColor: '#0063C3'
+              },
+              {
+                x: 'Marché',
+                y: [
+                  new Date('2023-01-01').getTime(),
+                  new Date('2024-01-01').getTime()
+                ],
+                fillColor: '#0063C3'
+              },
+              {
+                x: 'Renégociation',
+                y: [
+                  new Date('2023-10-01').getTime(),
+                  new Date('2024-01-01').getTime()
+                ],
+                fillColor: '#0063C3'
+              },
+              {
+                x: 'Reconduction',
+                y: [
+                  new Date('2024-01-01').getTime(),
+                  new Date('2025-01-01').getTime()
+                ],
+                fillColor: '#0063C3'
+              }
+            ]
+          }
+        ],
+        annotations: {
+                xaxis: [
+                    {
+                        x: new Date().getTime(),
+                        borderColor: '#ff0000',
+                        label: {
+                            borderColor: '#ff0000',
+                            style: {
+                                color: '#fff',
+                                background: '#ff0000',
+                            },
+                            text: ""
+                        }
+                    }
+                ]
+            },
+          chart: {
+          height: 350,
+          type: 'rangeBar',
+          locales: [{
+            
+    "name": "fr",
+    "options": {
+      "months": [
+        "janvier",
+        "février",
+        "mars",
+        "avril",
+        "mai",
+        "juin",
+        "juillet",
+        "août",
+        "septembre",
+        "octobre",
+        "novembre",
+        "décembre"
+      ],
+      "shortMonths": [
+        "janv.",
+        "févr.",
+        "mars",
+        "avr.",
+        "mai",
+        "juin",
+        "juill.",
+        "août",
+        "sept.",
+        "oct.",
+        "nov.",
+        "déc."
+      ],
+      "days": [
+        "dimanche",
+        "lundi",
+        "mardi",
+        "mercredi",
+        "jeudi",
+        "vendredi",
+        "samedi"
+      ],
+      "shortDays": ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+      "toolbar": {
+        "exportToSVG": "Télécharger au format SVG",
+        "exportToPNG": "Télécharger au format PNG",
+        "exportToCSV": "Télécharger au format CSV",
+        "menu": "Menu",
+        "selection": "Sélection",
+        "selectionZoom": "Sélection et zoom",
+        "zoomIn": "Zoomer",
+        "zoomOut": "Dézoomer",
+        "pan": "Navigation",
+        "reset": "Réinitialiser le zoom"
+      }
+    }
+
+    }],
+          defaultLocale: 'fr',
+        },
+        plotOptions: {
+          bar: {
+            horizontal: true,
+            distributed: true,
+            dataLabels: {
+              hideOverflowingLabels: false
+            }
+          }
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function(val, opts) {
+            var label = opts.w.globals.labels[opts.dataPointIndex]
+            var a = moment(val[0])
+            var b = moment(val[1])
+            var diff = b.diff(a, 'days')
+            // return label + ': ' + diff + (diff > 1 ? ' jours' : ' jour')
+            return label
+          },
+          style: {
+            colors: ['#0063C3'],
+          },
+          background: {
+            enabled: true,
+            foreColor: '#fff',
+          }
+        },
+        tooltip: {
+            custom: function({series, seriesIndex, dataPointIndex, w}) {
+            var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+            var deb = new Date(data.y[0]);
+            var fin = new Date(data.y[1]);
+            var a = moment(deb)
+            var b = moment(fin)
+            var diff = b.diff(a, 'days')
+
+      return '<ul>' +
+      '<li><b>Début</b>: ' + deb.toLocaleDateString("fr") + '</li>' +
+      '<li><b>Fin</b>: ' + fin.toLocaleDateString("fr") + '</li>' +
+      '<li><b>Durée</b>: ' + diff + (diff > 1 ? ' jours' : ' jour') + '</li>'
+      '</ul>';
+    }
+  }
+        ,
+        xaxis: {
+          type: 'datetime'
+        },
+        yaxis: {
+          show: false
+        },
+        grid: {
+          row: {
+            colors: ['#f3f4f5', '#fff'],
+            opacity: 1
+          },
+        }
+        };
+
+    
+        var chart = new ApexCharts(document.querySelector("#chart_div"), options);
+        chart.render();
+      
+        </script>
+      </div>
+      
+<!-- -------------------------------------------------------------------------------------- -->
+      <div class="detail" id='offres'>
+        <h3>Offres</h3>
+        <div style="margin: 0 5px; padding: 0 5px 20px 5px; overflow:scroll;">
+            <h4>Sans remises:</h4>
+            <table id="table_offres_id" class="display">
+                <thead style="background-color:rgb(0,99,195) ;">
+                    <tr>
+                        <th style="color: white;">Statut</th>
+                        <th style="color: white;">N° Lot</th>
+                        <th style="color: white;">Produit</th>
+                        <th style="color: white;">Dosage</th>
+                        <th style="color: white;">Volume</th>
+                        <th style="color: white;">Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="bi bi-check-circle-fill detail-green-icon"></i><span style="opacity: 0;">Z1</span></td>
+                        <td>Lot 1</td>
+                        <td>Produit 1</td>
+                        <td>Dosage 1</td>
+                        <td>Volume 1</td>
+                        <td>Prix 1</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-x-circle-fill detail-red-icon"></i><span style="opacity: 0;">Z3</span></td>
+                        <td>Lot 2</td>
+                        <td>Produit 2</td>
+                        <td>Dosage 2</td>
+                        <td>Volume 2</td>
+                        <td>Prix 2</td>
+                    </tr>
+                    <tr>
+                        <td><i class="bi bi-hourglass-split detail-orange-icon"></i><span style="opacity: 0;">Z2</span></td>
+                        <td>Lot 3</td>
+                        <td>Produit 3</td>
+                        <td>Dosage 3</td>
+                        <td>Volume 3</td>
+                        <td>Prix 3</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+      </div>
+      
+<!-- -------------------------------------------------------------------------------------- -->
+      <div class="detail main-last-child" id='remises'>
+        <h3>Remises</h3>
+        <div class="div-remises">
+            <h4>Remises sur objectifs:</h4>
+            <div style="margin: 0 5px; padding: 0 5px 20px 5px; overflow:scroll;">
+                
+                <table id="table_remises_id" class="display">
+                    <thead style="background-color:rgb(0,99,195) ;">
+                        <tr>
+                            <th style="color: white;">Début</th>
+                            <th style="color: white;">Produit</th>
+                            <th style="color: white;">Objectif</th>
+                            <th style="color: white;">Remise</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/01/2022</td>
+                            <td>Produit 1</td>
+                            <td>Objectif 1</td>
+                            <td>Remise 1</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>01/07/2022</td>
+                            <td>Produit 1</td>
+                            <td>Objectif 2</td>
+                            <td>Remise 2</td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="div-remises">
+            <h4>Remises globales:</h4>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim praesentium voluptate ipsam quisquam nostrum molestias dolore maiores, maxime fugit saepe accusantium dolor fugiat in repudiandae recusandae. Obcaecati a perferendis debitis.</p>
+            </div>
+        </div>
+      </div>
+<!-- -------------------------------------------------------------------------------------- -->  
+    </main>
+
+    <nav class="menu-nav">
+        
+            <div class="menu-li"><a href="calendar.html"><i class="bi bi-calendar"></i><div class="icon-title">Calendrier</div></a></div>
+            <div class="menu-li"><a href="focus.html"><i class="bi bi-search"></i><div class="icon-title">Focus</div></a></div>
+            <!-- <div class="menu-li"><a href="#"><i class="bi bi-sliders"></i><br>Filtres</a></div> -->
+            <div class="menu-li"><a href="alerts.html"><i class="bi bi-bell"></i><div class="icon-title">Notifications</div></a></div>
+            <div class="menu-li"><a href="settings.html"><i class="bi bi-gear-wide-connected"></i><div class="icon-title">Réglages</div></a></div>
+        
+    </nav>
+
+</body>
+<script>
+    //iPhone view height correction
+    const appHeight = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
+</script>
+
+<script>
+    $(document).ready( function () {
+        $('#table_offres_id').DataTable({
+            language: {
+                url: "Datatables/fr-FR.json"
+            }
+        });
+    } );
+
+    $(document).ready( function () {
+        $('#table_remises_id').DataTable({
+            language: {
+                url: "Datatables/fr-FR.json"
+            } 
+        });
+    } );
+</script>
+
+</html>
