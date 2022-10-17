@@ -1,16 +1,19 @@
 :root {
     --vh: 1vh;
+    --amgen-blue:rgb(0,99,195);
+
   }
   
   body {
     padding: 0;
     margin: 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     min-height: calc(var(--vh, 1vh) * 100);
   }
+
 /*----- HEADER -------------------------------*/
 header {
-    background-color: rgb(0,99,195);
+    background-color: var(--amgen-blue);
     color: white;
     height: 50px;
 
@@ -36,7 +39,7 @@ header {
 }
 /*----- NAVIGATION BAR -------------------------------*/
 nav {
-    background-color: rgb(0,99,195);
+    background-color: var(--amgen-blue);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -122,4 +125,144 @@ form > p {
     animation-name: shake; 
 }
 
-/*----- XXX -------------------------------*/
+/*----- DETAIL -------------------------------*/
+
+.detail {
+    margin: 10px 5px;
+    padding: 0 0 10px 0;
+    border-radius:5px;
+}
+
+.detail > h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.detail > h3 {
+    text-align: center;
+    margin-bottom: 1rem !important;
+    
+    padding: 5px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color:white;
+    background-color: var(--amgen-blue);
+}
+
+.div-remises > h4, p {
+    margin-left:10px;
+}
+
+/* #info {
+    margin-top: 10px;
+} */
+
+/* #planning, #remises {
+    background-color: var(--bs-gray-200);
+} */
+
+#planning {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;        
+
+}
+
+#offres, #remises {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    margin-top: 50px !important;
+}
+
+.div-remises:last-of-type{
+
+    margin-top: 10px;
+}
+
+
+/* .table-general {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.table-general > div {
+    margin: 0 5px;
+    flex-basis: 50%;
+} 
+
+table {
+    border-radius: 5px;
+}
+
+thead > tr th:first-of-type{
+    border-top-left-radius:5px;
+}
+
+thead > tr th:last-of-type{
+    border-top-right-radius:5px;
+}
+.search-table-icon {
+    border: 1px solid #aaa;
+    padding: 7px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.detail-blue-icon, .detail-green-icon, .detail-orange-icon, .detail-red-icon {
+    color: white;
+    background-color: var(--amgen-blue);
+    border-radius: 5px;
+    padding: 5px; 
+}
+
+.detail-blue-icon{
+    background-color: var(--amgen-blue);
+}
+
+.detail-green-icon {
+    background-color: green;
+}
+
+.detail-red-icon{
+    background-color: red;
+}
+
+.detail-orange-icon {
+    background-color: orange;
+}
+/*----- DETAIL > PLANNING -------------------------------*/
+
+.chart {
+    margin: 0 5px;
+    /* border: 1px solid var(--amgen-blue); */
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;         */
+
+    /* min-height: 450px; */
+    /* height: 210px; */
+    border-radius: 5px;
+    background-color: white;
+}
+
+.chart > div {
+    width: 100% !important;
+    overflow: hidden;
+    margin: 5px;
+    left: -5px;
+}
+
+/*----- FOOTER -------------------------------*/
+
+.menu-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.main-last-child{
+    margin-bottom: 60px;
+}
+/*----- DETAIL -------------------------------*/
+/*----- DETAIL -------------------------------*/
+/*----- DETAIL -------------------------------*/
+/*----- DETAIL -------------------------------*/
+/*----- DETAIL -------------------------------*/
+/*----- DETAIL -------------------------------*/
+ 
