@@ -32,10 +32,12 @@
         </div>
     </header>
 
-    <main>
+    <main class="detail-flex">
 <!-- -------------------------------------------------------------------------------------- -->
-      <div class="detail" id='info'>
-        <h2><i class="bi bi-folder2-open detail-blue-icon" ></i> UNICANCER-A0-123  <i class="bi bi-arrow-repeat detail-green-icon"> 1</i></h2>
+    
+    <div class="detail-main">    
+    <div class="detail" id='info'>
+        <h2><i class="bi bi-folder2-open detail-blue-icon" ></i> A0-123  <i class="bi bi-arrow-repeat detail-green-icon"> 1</i></h2>
        
         <!--<i class="bi bi-arrow-repeat detail-green-icon"> 1</i> -->
         <!-- <i class="bi bi-arrow-repeat" style="color: red;"></i>  -->	
@@ -43,6 +45,12 @@
         <div class="table-general">
             <div>
                 <p>		
+                        <span>
+                            <i class="bi bi-hospital detail-blue-icon" ></i> 
+                            UNICANCER 
+                        </span>
+                </p>
+                <p>      
                         <span>
                             <i class="bi bi-person-fill detail-blue-icon"></i>
                             Béatrice
@@ -163,7 +171,7 @@
                 fillColor: '#0063C3'
               },
               {
-                x: 'Renégociation',
+                x: 'Révision',
                 y: [
                   new Date('2023-10-01').getTime(),
                   new Date('2024-01-01').getTime()
@@ -327,7 +335,7 @@
 <!-- -------------------------------------------------------------------------------------- -->
       <div class="detail" id='offres'>
         <h3>Offres</h3>
-        <div style="margin: 0 5px; padding: 0 5px 20px 5px; overflow:scroll;">
+        <div class="table-container">
             <h4>Sans remises:</h4>
             <table id="table_offres_id" class="display">
                 <thead style="background-color:rgb(0,99,195) ;">
@@ -345,26 +353,34 @@
                         <td><i class="bi bi-check-circle-fill detail-green-icon"></i><span style="opacity: 0;">Z1</span></td>
                         <td>629</td>
                         <td>MVASI</td>
-                        <td>Dose 1; Dose 2; Dose 3;</td>
-                        <td>Volume 1</td>
+                        <td>100mg; 400mg;</td>
+                        <td>Volume 629</td>
                         <td>0,6993€</td>
                     </tr>
                     <tr>
                         <td><i class="bi bi-x-circle-fill detail-red-icon"></i><span style="opacity: 0;">Z3</span></td>
                         <td>722</td>
-                        <td>Kanjinti</td>
-                        <td>Dose 2; Dose 3;</td>
-                        <td>Volume 2</td>
-                        <td>Prix 2</td>
+                        <td>KANJINTI</td>
+                        <td>150mg;</td>
+                        <td>Volume 722</td>
+                        <td>Prix 722</td>
                     </tr>
                     <tr>
+                        <td><i class="bi bi-x-circle-fill detail-red-icon"></i><span style="opacity: 0;">Z2</span></td>
+                        <td>630</td>
+                        <td>VECTIBIX</td>
+                        <td>100mg;</td>
+                        <td>Volume 630</td>
+                        <td>Prix 630</td>
+                    </tr>
+                    <!-- <tr>
                         <td><i class="bi bi-hourglass-split detail-orange-icon"></i><span style="opacity: 0;">Z2</span></td>
                         <td>630</td>
                         <td>Vectibix</td>
-                        <td>Dose 2;</td>
-                        <td>Volume 3</td>
-                        <td>Prix 3</td>
-                    </tr>
+                        <td>100mg;</td>
+                        <td>Volume 630</td>
+                        <td>Prix 630</td>
+                    </tr> -->
                     
                 </tbody>
             </table>
@@ -372,11 +388,11 @@
       </div>
       
 <!-- -------------------------------------------------------------------------------------- -->
-      <div class="detail main-last-child" id='remises'>
+      <div class="detail main-last-child-flex" id='remises'>
         <h3>Remises</h3>
         <div class="div-remises">
             <h4>Remises sur objectifs:</h4>
-            <div style="margin: 0 5px; padding: 0 5px 20px 5px; overflow:scroll;">
+            <div class="table-container">
                 
                 <table id="table_remises_id" class="display">
                     <thead style="background-color:rgb(0,99,195) ;">
@@ -393,20 +409,20 @@
                             <td>01/01/2022</td>
                             <td>MVASI</td>
                             <td>Volume semestriel > 7 200 000mg</td>
-                            <td>30% CA</td>
+                            <td>CA 30% </td>
                             
                         </tr>
                         <tr>
                             <td>01/07/2022</td>
-                            <td>Vectibix</td>
+                            <td>VECTIBIX</td>
                             <td>Volume annuel > 1 900 000mg</td>
-                            <td>2% CA</td>
+                            <td>CA 2%</td>
                         </tr>
                         <tr>
                             <td>01/07/2022</td>
-                            <td>Kanjinti</td>
+                            <td>KANJINTI</td>
                             <td>Volume semestriel > 5 500 000mg</td>
-                            <td>30% CA</td>
+                            <td>CA 30%</td>
                         </tr>
                     </tbody>
                 </table>
@@ -415,13 +431,94 @@
         <hr>
         <div class="div-remises">
             <h4>Remises globales:</h4>
+        <!--   
             <div>
                 <p>Pour l'ensemble du portefeuille du marché, une remise annuelle sur le CA total de 1,5%, si le CA en fin de chaque période annuelle de marché est supérieur ou égal à 19 000 000€.</p>
             </div>
+        -->
+            <div class="table-container">
+                
+                <table id="table_remises_globales_id" class="display">
+                    <thead style="background-color:rgb(0,99,195) ;">
+                        <tr>
+                            <th style="color: white;">Remise</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>           
+                                <p>Pour l'ensemble du portefeuille du marché, une remise annuelle sur le CA total de 1,5%, si le CA en fin de chaque période annuelle de marché est supérieur ou égal à 19 000 000€.</p>
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Pour l'ensemble du portefeuille du marché, une remise annuelle sur le CA total de 1,5%, si le CA en fin de chaque période annuelle de marché est supérieur ou égal à 19 000 000€.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
       </div>
+    </div>
 <!-- -------------------------------------------------------------------------------------- -->  
-    </main>
+<div class="detail-notes">
+<div class="detail main-last-child" id='notes'>
+    <h3>Notes</h3>
+    <div class="div-notes">
+        <h4>Ajouter une note <i class="bi bi-plus-circle detail-blue-icon" onclick="alert('nouvelle note')"></i> </h4>
+        <div class="table-container-noscroll">
+            
+            <table id="table_notes_id" class="display">
+                <thead style="background-color:rgb(0,99,195) ;">
+                    <tr>
+                        <th style="color: white;">Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Titre</strong>
+                            <br> 
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea dignissimos blanditiis, nobis quas fugiat saepe non. Officia tenetur iure illum dignissimos ut! Velit, cum fuga! Sequi ipsa molestiae aspernatur obcaecati!                        
+                            </p>
+                            
+                            <p class="notes-footer">19/10/2022 - Patrice <i class="bi bi-pencil detail-blue-icon" id="note-111" onclick="alert('modifier note-111')"></i></p>
+                        </td>    
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Titre</strong>
+                            <br>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium incidunt quasi ducimus iste, perferendis rerum perspiciatis, libero assumenda qui eveniet dolorem quis, alias quae obcaecati quod. Cupiditate voluptatum sit sapiente!
+                            </p>
+                            
+                            <p class="notes-footer">19/10/2022 - Patrice <i class="bi bi-pencil detail-blue-icon" id="note-222" onclick="alert('modifier note-222')"></i></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Titre</strong>
+                            <br>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur dolorum accusamus repudiandae aspernatur excepturi harum ipsa, ut perferendis. Dicta quia nobis soluta enim asperiores laborum velit vel consequuntur officiis porro.
+                            </p>
+                            
+                            <p class="notes-footer">19/10/2022 - Béatrice <i class="bi bi-pencil detail-blue-icon" id="note-333" onclick="alert('modifier note-333')"></i></p> 
+                        </td>                           
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+
+</main>
 
     <nav class="menu-nav">
         
@@ -455,6 +552,24 @@
 
     $(document).ready( function () {
         $('#table_remises_id').DataTable({
+            language: {
+                url: "Datatables/fr-FR.json"
+            } 
+        });
+    } );
+
+    $(document).ready( function () {
+        $('#table_remises_globales_id').DataTable({
+            language: {
+                url: "Datatables/fr-FR.json"
+            } 
+        });
+    } );
+
+    $(document).ready( function () {
+        $('#table_notes_id').DataTable({
+            
+            paging: false,
             language: {
                 url: "Datatables/fr-FR.json"
             } 
