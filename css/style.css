@@ -283,7 +283,7 @@ thead > tr th:last-of-type{
 
 .search-table-icon {
     border: 1px solid #aaa;
-    padding: 7px;
+    padding: 6px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
