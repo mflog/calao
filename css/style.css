@@ -201,7 +201,7 @@ strong {
 
     #table_notes_id_wrapper > table > tbody {
         display: block;
-        overflow: scroll;
+        overflow-y: scroll;
         height: calc(100vh - 325px);
     }
 
