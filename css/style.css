@@ -197,6 +197,7 @@ strong {
 
     .detail-main{
         margin-bottom: 60px; 
+        max-width:69vw;
     }
 
     #table_notes_id_wrapper > table > tbody {
