@@ -100,7 +100,7 @@ thead {
 
 .form-container {
     height: calc(var(--vh, 1vh) * 100 - 120px);
-    margin: 50px 5px -30px 5px;
+    margin: 100px 5px 0px 5px;
 }
 
 form {
@@ -177,6 +177,12 @@ strong {
 }
 
 @media screen and (min-width:768px) {
+    
+    .form-container{
+        width: 50%;
+        margin: 100px auto 0 auto;
+    }
+
     .detail-flex{
         flex-direction: row;
     }
