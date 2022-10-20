@@ -164,7 +164,7 @@ strong {
 .table-container{
     margin: 0 5px; 
     padding: 0 5px 20px 5px; 
-    overflow:scroll;
+    overflow-x:scroll;
 }
 
 .table-container-noscroll{
@@ -183,6 +183,10 @@ strong {
         margin: 100px auto 0 auto;
     }
 
+    .detail {
+        margin: 10px 5px 100px 15px !important;
+    }
+
     .detail-flex{
         flex-direction: row;
     }
@@ -197,12 +201,13 @@ strong {
 
     .detail-main{
         margin-bottom: 60px; 
+        max-width: 69vw;
     }
 
     #table_notes_id_wrapper > table > tbody {
         display: block;
-        overflow: scroll;
-        height: calc(100vh - 325px);
+        overflow-y: scroll;
+        height: calc(100vh - 280px);
     }
 
     #table_notes_id_filter {
@@ -230,7 +235,7 @@ strong {
 }
 
 #info {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 .detail > h2 {
@@ -253,7 +258,7 @@ strong {
     margin-left:10px;
 }
 
-#planning,#offres, #remises, #notes {
+#planning,#offres, #remises {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;        
 
 }
@@ -281,10 +286,27 @@ thead > tr th:last-of-type{
 }
 
 .search-table-icon {
-    border: 1px solid #aaa;
-    padding: 7px;
+    /* border: 1px solid #aaa;
+    padding: 6px;
     border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+    display: none;
+
+}
+
+.note-toolbar > h5{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#table_notes_id_filter > label {
+    width: 100%;
+}
+
+#table_notes_id_filter > label > input {
+    width: 100%;
+    margin-left: 0;
 }
 
 .detail-blue-icon, .detail-green-icon, .detail-orange-icon, .detail-red-icon {
